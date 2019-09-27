@@ -1,0 +1,24 @@
+import java.io.*;
+
+public class FileHandling 
+{
+	public static void main(String arg[])
+	{
+		try{
+		FileReader fr = new FileReader("E:\\myfile.txt");
+		int i;
+		FileWriter fw = new FileWriter("E:\\myfile1.txt");
+		while((i = fr.read()) != -1 )
+		{
+			fw.write((char)i);
+		}
+		fr.close();
+		fw.close();
+		System.out.println("File Written.");
+			}
+		catch(Exception e)
+		{
+			System.out.println("File not fount " + e);
+		}
+	}
+}
